@@ -29,14 +29,3 @@ class DLL {
     return this;
   }
 }
-
-
-
-
-
-const list = new DLL();
-list.push(4);
-list.push(5)
-list.push(6);
-list.shift();
-list.shift();

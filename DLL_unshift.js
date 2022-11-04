@@ -12,18 +12,17 @@ class DLL {
     this.tail = null;
     this.length = 0;
   }
-  
-  push(val) {
+    unshift(val) {
     let newNode = new Node(val);
-    if(this.head === null && this.tail === null) {
+    if(this.length === 0) {
       this.head = newNode;
       this.tail = newNode;
       this.length++;
     } else {
-      let temp = this.tail;
-      this.tail.next = newNode;
-      this.tail = newNode;
-	  newNode.prev = temp;
+      let prevHead = this.head;
+      this.head = newNode;
+      prevHead.prev = newNode;
+      newNode.next = prevHead;
       this.length++;
     }
     return this;
